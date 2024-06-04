@@ -1,12 +1,16 @@
 import React from 'react'
+import { logoutApi } from '../apis/loginApi'
 
-export const LoginBtn = ({ setPage, isLogin, removeAttendee }) => {
+export const LoginBtn = ({ setPage, isLogin, removeAttendee, attendee }) => {
   const handleLogin = () => {
     setPage("login")
   }
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    const result = await logoutApi(attendee)
+    if (result.message !== "Logout success") console.error("logout error")
     removeAttendee()
     setPage("none")
+
   }
   return (
     <div>
