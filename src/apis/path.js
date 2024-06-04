@@ -1,0 +1,1 @@
+export const appPath = "http://localhost/api/v1/"
