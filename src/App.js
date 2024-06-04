@@ -9,7 +9,7 @@ import { EventList } from "./components/EventList";
 
 function App() {
   const [attendee, setAttendee, removeAttendee] = useLocalStorage("attendee", null)
-  const [page, setPage] = useState("none")
+  const [page, setPage] = useState("eventList")
   const isLogin = attendee !== null
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
       <div className="mt-4 border p-4">
 
         {page === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
-        {page === "eventList" && <EventList />}
+        {page === "eventList" && <EventList attendee={attendee} />}
 
       </div>
     </div>

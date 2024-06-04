@@ -9,7 +9,7 @@ export const LoginBtn = ({ setPage, isLogin, removeAttendee, attendee }) => {
     const result = await logoutApi(attendee)
     if (result.message !== "Logout success") console.error("logout error")
     removeAttendee()
-    setPage("none")
+    setPage("eventList")
 
   }
   return (
