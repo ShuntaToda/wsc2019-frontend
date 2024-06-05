@@ -6,6 +6,7 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Login } from "./components/Login";
 import { EventIndex } from "./components/EventIndex";
 import { Event } from "./components/Event";
+import { Program } from "./components/Program";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         {page.section === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
         {page.section === "eventList" && <EventIndex setPage={setPage} attendee={attendee} />}
         {page.section === "eventDetail" && <Event page={page} setPage={setPage} attendee={attendee} />}
+        {page.section === "programDetail" && <Program page={page} setPage={setPage} />}
 
       </div>
     </div>

@@ -15,7 +15,7 @@ export const ProgramList = ({ program, registrations, setPage }) => {
   const isSelectedBorderColor = selectBorderColor() ?? false
 
   const clickProgram = () => {
-
+    setPage({ section: "programDetail", data: program })
   }
   return (
     <div className={`d-flex gap-3 my-2 `} onClick={clickProgram} style={isSelectedBorderColor ? { border: `solid ${selectBorderColor()} 2px` } : {}} >
