@@ -6,10 +6,10 @@ export const LoginBtn = ({ setPage, isLogin, removeAttendee, attendee }) => {
     setPage({ section: "login", data: {} })
   }
   const handleLogout = async () => {
+    setPage({ section: "eventList", data: {} })
     const result = await logoutApi(attendee)
     if (result.message !== "Logout success") console.error("logout error")
     removeAttendee()
-    setPage({ section: "eventList", data: {} })
 
   }
   return (

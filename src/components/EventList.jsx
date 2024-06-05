@@ -3,11 +3,6 @@ import React from 'react'
 export const EventList = ({ event, setPage }) => {
   const date = new Date(event.date)
   const selectEvent = () => {
-    console.log({
-      section: "eventDetail", data: {
-        event
-      }
-    })
 
     setPage({
       section: "eventDetail", data: {
