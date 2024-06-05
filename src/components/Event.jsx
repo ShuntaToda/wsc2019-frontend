@@ -25,11 +25,15 @@ export const Event = ({ page, setPage, attendee }) => {
     if (attendee) getRegistrations()
     getEventDetail()
   }, [])
+
+  const clickRegisterEventBtn = () => {
+    setPage({ section: "registerEvent", data: eventDetail })
+  }
   return (
     <div className='mt-3'>
       <div className='d-flex align-items-center justify-content-between'>
         <h2>{page.data.event.name}</h2>
-        <div className='btn btn-outline-primary'>Register for this event</div>
+        <div className='btn btn-outline-primary' onClick={clickRegisterEventBtn}>Register for this event</div>
       </div>
       <div className='mt-3'>
         {channels.map((channel) => <ChannelList key={channel.id} setPage={setPage} channel={channel} registrations={registrations} />)}

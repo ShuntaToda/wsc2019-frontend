@@ -7,6 +7,7 @@ import { Login } from "./components/Login";
 import { EventIndex } from "./components/EventIndex";
 import { Event } from "./components/Event";
 import { Program } from "./components/Program";
+import { RegisterEvent } from "./components/RegisterEvent";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         {page.section === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
         {page.section === "eventList" && <EventIndex setPage={setPage} attendee={attendee} />}
         {page.section === "eventDetail" && <Event page={page} setPage={setPage} attendee={attendee} />}
+        {page.section === "registerEvent" && <RegisterEvent page={page} setPage={setPage} />}
         {page.section === "programDetail" && <Program page={page} setPage={setPage} />}
 
       </div>
