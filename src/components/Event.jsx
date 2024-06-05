@@ -15,8 +15,11 @@ export const Event = ({ page, setPage, attendee }) => {
     getEventDetail()
   }, [])
   return (
-    <div>
-      <h2>{page.data.event.name}</h2>
+    <div className='mt-3'>
+      <div className='d-flex align-items-center justify-content-between'>
+        <h2>{page.data.event.name}</h2>
+        <div className='btn btn-outline-primary'>Register for this event</div>
+      </div>
       <div className='mt-3'>
         {channels.map((channel) => <ChannelList key={channel.id} channel={channel} />)}
       </div>
