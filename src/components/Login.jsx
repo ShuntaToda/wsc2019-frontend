@@ -19,7 +19,7 @@ export const Login = ({ setPage, setAttendee }) => {
     setAttendee(data)
     if (data === false) return
     if (data.token) {
-      setPage("eventList")
+      setPage({ section: "eventList", data: {} })
     } else if (data.message) {
       setMessage(data.message)
     }

@@ -3,13 +3,13 @@ import { logoutApi } from '../apis/loginApi'
 
 export const LoginBtn = ({ setPage, isLogin, removeAttendee, attendee }) => {
   const handleLogin = () => {
-    setPage("login")
+    setPage({ section: "login", data: {} })
   }
   const handleLogout = async () => {
     const result = await logoutApi(attendee)
     if (result.message !== "Logout success") console.error("logout error")
     removeAttendee()
-    setPage("eventList")
+    setPage({ section: "eventList", data: {} })
 
   }
   return (

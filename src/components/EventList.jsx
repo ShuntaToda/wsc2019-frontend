@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { getEventsApi } from '../apis/events'
-import { Event } from './Event'
+import React from 'react'
 
-export const EventList = ({ attendee }) => {
+export const EventList = ({ event, setPage }) => {
+  const date = new Date(event.date)
+  const selectEvent = () => {
+    console.log({
+      section: "eventDetail", data: {
+        event
+      }
+    })
 
-  const [events, setEvents] = useState([])
-
-  const getEvents = async () => {
-    const data = await getEventsApi(attendee)
-    setEvents(data)
+    setPage({
+      section: "eventDetail", data: {
+        event
+      }
+    })
   }
-
-  useEffect(() => {
-    getEvents()
-  }, [])
   return (
-    <div>
-      <h2>EventList</h2>
-      <div className='mt-4'>
-        {events.map(event => <Event key={event.id} event={event} />)}
-      </div>
+    <div className='p-3 border my-3' onClick={selectEvent}>
+      <div className='fw-bold fs-5'>{event.name}</div>
+      <div>Organizer {event.organizer.name}, {date.toLocaleString("en-US", { month: "long" })} {date.getDate()}, {date.getFullYear()}</div>
     </div>
   )
 }

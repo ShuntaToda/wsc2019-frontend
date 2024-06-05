@@ -4,16 +4,16 @@ import { LoginBtn } from "./components/LoginBtn";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Login } from "./components/Login";
-import { EventList } from "./components/EventList";
+import { EventIndex } from "./components/EventIndex";
 
 
 function App() {
   const [attendee, setAttendee, removeAttendee] = useLocalStorage("attendee", null)
-  const [page, setPage] = useState("eventList")
+  const [page, setPage] = useState({ section: "eventList", data: {} })
   const isLogin = attendee !== null
 
   useEffect(() => {
-    if (isLogin) setPage("eventList")
+    if (isLogin) setPage({ section: "eventList", data: "" })
   }, [])
 
   return (
@@ -26,8 +26,8 @@ function App() {
       </div>
       <div className="mt-4 border p-4">
 
-        {page === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
-        {page === "eventList" && <EventList attendee={attendee} />}
+        {page.section === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
+        {page.section === "eventList" && <EventIndex setPage={setPage} attendee={attendee} />}
 
       </div>
     </div>
