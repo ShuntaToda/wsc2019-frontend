@@ -12,7 +12,6 @@ export const ProgramList = ({ program, registrations }) => {
 
   }
 
-  console.log(program.type, selectBorderColor());
   const isSelectedBorderColor = selectBorderColor() ?? false
   return (
     <div className={`d-flex gap-3 my-2 `} style={isSelectedBorderColor ? { border: `solid ${selectBorderColor()} 2px` } : {}} >
