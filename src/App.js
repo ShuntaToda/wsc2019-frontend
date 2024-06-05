@@ -17,10 +17,13 @@ function App() {
     if (isLogin) setPage({ section: "eventList", data: "" })
   }, [])
 
+  const clickTitle = () => {
+    setPage({ section: "eventList" })
+  }
   return (
     <div className="container">
       <div className="mt-5 d-flex justify-content-between align-items-center">
-        <h1 className="">Event Booking Platform</h1>
+        <h1 className="" style={{ cursor: "pointer" }} onClick={clickTitle}>Event Booking Platform</h1>
         <div>
           <LoginBtn isLogin={isLogin} setPage={setPage} removeAttendee={removeAttendee} attendee={attendee} />
         </div>
