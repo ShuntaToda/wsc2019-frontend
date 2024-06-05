@@ -1,6 +1,6 @@
 import { appPath } from "./path"
 
-export const getEventsApi = async (attendee) => {
+export const getEventsApi = async () => {
 
   const path = appPath + "events"
 
@@ -10,7 +10,6 @@ export const getEventsApi = async (attendee) => {
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": "Bearer " + attendee.token
       }
     })
 
