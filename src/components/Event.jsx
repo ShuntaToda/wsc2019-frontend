@@ -32,7 +32,7 @@ export const Event = ({ page, setPage, attendee }) => {
         <div className='btn btn-outline-primary'>Register for this event</div>
       </div>
       <div className='mt-3'>
-        {channels.map((channel) => <ChannelList key={channel.id} channel={channel} registrations={registrations} />)}
+        {channels.map((channel) => <ChannelList key={channel.id} setPage={setPage} channel={channel} registrations={registrations} />)}
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const ProgramList = ({ program, registrations }) => {
+export const ProgramList = ({ program, registrations, setPage }) => {
 
   const selectBorderColor = () => {
     if (program.type === "talk") return "green"
@@ -13,8 +13,12 @@ export const ProgramList = ({ program, registrations }) => {
   }
 
   const isSelectedBorderColor = selectBorderColor() ?? false
+
+  const clickProgram = () => {
+
+  }
   return (
-    <div className={`d-flex gap-3 my-2 `} style={isSelectedBorderColor ? { border: `solid ${selectBorderColor()} 2px` } : {}} >
+    <div className={`d-flex gap-3 my-2 `} onClick={clickProgram} style={isSelectedBorderColor ? { border: `solid ${selectBorderColor()} 2px` } : {}} >
       <div>{program.start}</div>
       <div>{program.end}</div>
       <div className=''>
