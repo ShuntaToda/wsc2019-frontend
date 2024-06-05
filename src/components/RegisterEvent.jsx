@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { RegisterTicket } from './RegisterTicket'
 import { RegisterWorkshop } from './RegisterWorkshop'
 import { RegisterCounter } from './RegisterCounter'
+import { PurchaseBtn } from './PurchaseBtn'
 
-export const RegisterEvent = ({ page, setPage }) => {
+export const RegisterEvent = ({ page, setPage, attendee }) => {
   const event = page.data
   const [tickets, setTickets] = useState(event.tickets.map(ticket => { return { ...ticket, selected: false } }))
   const [workshops, setWorkshops] = useState([])
@@ -38,7 +39,10 @@ export const RegisterEvent = ({ page, setPage }) => {
         </div>
       </div>
       <div className='mt-3 d-flex justify-content-end'>
-        <RegisterCounter tickets={tickets} workshops={workshops} />
+        <div>
+          <RegisterCounter tickets={tickets} workshops={workshops} />
+          <PurchaseBtn workshops={workshops} tickets={tickets} event={event} attendee={attendee} />
+        </div>
       </div>
     </div>
   )

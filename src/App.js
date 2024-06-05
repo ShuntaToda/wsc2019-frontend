@@ -35,7 +35,7 @@ function App() {
         {page.section === "login" && <Login setPage={setPage} setAttendee={setAttendee} />}
         {page.section === "eventList" && <EventIndex setPage={setPage} attendee={attendee} />}
         {page.section === "eventDetail" && <Event page={page} setPage={setPage} attendee={attendee} />}
-        {page.section === "registerEvent" && <RegisterEvent page={page} setPage={setPage} />}
+        {page.section === "registerEvent" && <RegisterEvent page={page} setPage={setPage} attendee={attendee} />}
         {page.section === "programDetail" && <Program page={page} setPage={setPage} />}
 
       </div>
