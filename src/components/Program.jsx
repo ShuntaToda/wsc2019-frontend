@@ -10,22 +10,24 @@ export const Program = ({ page, setPage }) => {
       <h2>{program.title}</h2>
       <div>{program.description}</div>
       <table className='table w-50 mt-3'>
-        <tr>
-          <td className='fw-bold'>Speaker:</td>
-          <td>{program.speaker}</td>
-        </tr>
-        <tr>
-          <td className='fw-bold'>Start:</td>
-          <td>{startDate.getHours()}:{startDate.getMinutes()}</td>
-        </tr>
-        <tr>
-          <td className='fw-bold'>End:</td>
-          <td>{endDate.getHours()}:{endDate.getMinutes()}</td>
-        </tr>
-        <tr>
-          <td className='fw-bold'>Cost:</td>
-          <td>{program.cost}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td className='fw-bold'>Speaker:</td>
+            <td>{program.speaker}</td>
+          </tr>
+          <tr>
+            <td className='fw-bold'>Start:</td>
+            <td>{startDate.getHours()}:{startDate.getMinutes()}</td>
+          </tr>
+          <tr>
+            <td className='fw-bold'>End:</td>
+            <td>{endDate.getHours()}:{endDate.getMinutes()}</td>
+          </tr>
+          <tr>
+            <td className='fw-bold'>Cost:</td>
+            <td>{program.cost}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   )
